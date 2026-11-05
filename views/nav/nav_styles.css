@@ -1,0 +1,104 @@
+/* -------------------------------------------
+   ESTILOS GENERALES Y LAYOUT PRINCIPAL
+   ------------------------------------------- */
+
+header {
+    background-color: #000; /* Fondo negro */
+    width: 100%;
+    position: fixed; /* Mantiene el nav fijo arriba */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #222; /* Línea sutil para separar del contenido */
+}
+
+.nav-principal {
+    display: flex;
+    justify-content: space-between; /* Logo izquierda, Menú centro, Acciones derecha */
+    align-items: center;
+    padding: 0 40px; 
+    max-width: 100%; /* Ocupa todo el ancho */
+    margin: 0 auto;
+    height: 70px; /* Altura fija para el nav */
+    box-sizing: border-box;
+}
+
+/* -------------------------------------------
+   BLOQUE 1: LOGO
+   ------------------------------------------- */
+.nav-logo img {
+    height: 35px; /* Tamaño controlado para el logo */
+    width: auto;
+    vertical-align: middle;
+}
+
+/* -------------------------------------------
+   BLOQUE 2: MENÚ DE NAVEGACIÓN CENTRAL
+   ------------------------------------------- */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.8;
+    transition: opacity 0.2s, color 0.2s;
+}
+
+.nav-menu a:hover {
+    opacity: 1;
+    color: #00B4FF; /* Color azul al pasar el ratón */
+}
+
+.separador {
+    color: #00B4FF; /* Puntos azules estilo M+ */
+    font-size: 18px;
+    font-weight: bold;
+    user-select: none; /* Evita que se seleccione el punto */
+}
+
+/* -------------------------------------------
+   BLOQUE 3: ACCIONES (Panel Admin, Carrito, Usuario)
+   ------------------------------------------- */
+.nav-acciones {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre el texto y los iconos */
+}
+
+/* Enlace Panel Admin */
+.nav-acciones a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.nav-acciones a:hover {
+    color: #00B4FF;
+}
+
+/* ICONOS (CARRITO Y USUARIO) - SOLUCIÓN PARA EL TAMAÑO GIGANTE */
+.nav-acciones img {
+    width: 24px;   /* Ancho fijo para que no crezcan */
+    height: 24px;  /* Alto fijo */
+    object-fit: contain; /* Mantiene la proporción del icono */
+    cursor: pointer;
+    transition: transform 0.2s;
+    filter: brightness(0) invert(1); /* Opcional: vuelve los iconos blancos si son oscuros */
+}
+
+.nav-acciones img:hover {
+    transform: scale(1.1); /* Efecto pequeño al pasar el ratón */
+}
+
+/* Ajuste para el cuerpo de la página debido al header fixed */
+body {
+    padding-top: 70px; /* Deja espacio para que el nav no tape el contenido */
+}
